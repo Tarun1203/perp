@@ -1,5 +1,5 @@
-// MAKWELL ELECTRONICS - COMPLETE JAVASCRIPT FUNCTIONALITY
-// Product data with GitHub image URLs and attractive labels
+// MAKWELL ELECTRONICS - UPDATED JAVASCRIPT WITH MAIN BRANCH URLS
+// Product data with GitHub main branch image URLs
 
 const products = [
     {
@@ -13,7 +13,7 @@ const products = [
         "originalPrice": "₹15,999",
         "tags": ["Full HD 1080p", "60cm", "Low Power"],
         "specs": ["16.7M Colors"],
-        "image": "https://raw.githubusercontent.com/Tarun1203/perp/f92ba597abb06a223ea8f43202664060d866f839/assets/MK24.jpg",
+        "image": "https://raw.githubusercontent.com/Tarun1203/perp/main/assets/MK24.jpg",
         "description": "Compact Full HD LED TV, ideal for bedrooms and small living spaces.",
         "highlights": ["Energy efficient for lower electricity bills", "Vivid color reproduction", "Sturdy build quality"],
         "warranty": "1 Year Onsite Warranty",
@@ -31,7 +31,7 @@ const products = [
         "originalPrice": "₹22,999",
         "tags": ["HD Ready", "Low Power"],
         "specs": ["1GB RAM", "8GB ROM"],
-        "image": "https://raw.githubusercontent.com/Tarun1203/perp/f92ba597abb06a223ea8f43202664060d866f839/assets/MK32S.jpg",
+        "image": "https://raw.githubusercontent.com/Tarun1203/perp/main/assets/MK32S.jpg",
         "description": "Android Smart TV for immersive entertainment at home.",
         "highlights": ["Pre-installed streaming apps", "Voice remote and screen mirroring", "Slim bezel design"],
         "warranty": "2 Years Panel Warranty",
@@ -49,7 +49,7 @@ const products = [
         "originalPrice": "₹28,999",
         "tags": ["Full HD", "Voice Keypad"],
         "specs": ["1GB RAM", "8GB ROM"],
-        "image": "https://raw.githubusercontent.com/Tarun1203/perp/f92ba597abb06a223ea8f43202664060d866f839/assets/MK40S.jpg",
+        "image": "https://raw.githubusercontent.com/Tarun1203/perp/main/assets/MK40S.jpg",
         "description": "Full HD Smart TV with voice-assisted browsing.",
         "highlights": ["Crystal clear HD visuals", "Smart remote with voice control", "Wall-mount and tabletop options"],
         "warranty": "2 Years Warranty",
@@ -67,7 +67,7 @@ const products = [
         "originalPrice": "₹29,999",
         "tags": ["Full HD", "Voice Keypad"],
         "specs": ["1GB RAM", "8GB ROM"],
-        "image": "https://raw.githubusercontent.com/Tarun1203/perp/f92ba597abb06a223ea8f43202664060d866f839/assets/MK43S.jpg",
+        "image": "https://raw.githubusercontent.com/Tarun1203/perp/main/assets/MK43S.jpg",
         "description": "Experience true home cinema with next-gen smart features.",
         "highlights": ["Dolby audio support", "Multi-device connectivity", "Stunning edge-to-edge display"],
         "warranty": "2 Years Warranty",
@@ -85,7 +85,7 @@ const products = [
         "originalPrice": "₹31,999",
         "tags": ["Full HD", "Voice Keypad"],
         "specs": ["1GB RAM", "8GB ROM"],
-        "image": "https://raw.githubusercontent.com/Tarun1203/perp/f92ba597abb06a223ea8f43202664060d866f839/assets/MK43Web.jpg",
+        "image": "https://raw.githubusercontent.com/Tarun1203/perp/main/assets/MK43Web.jpg",
         "description": "webOS Smart TV with seamless app navigation and live channels.",
         "highlights": ["Smooth interface, quick app switching", "Voice search and universal remote", "Supports OTT and gaming"],
         "warranty": "2 Years Panel Warranty",
@@ -103,7 +103,7 @@ const products = [
         "originalPrice": "₹36,999",
         "tags": ["Full HD", "Voice Keypad"],
         "specs": ["1GB RAM", "8GB ROM"],
-        "image": "https://raw.githubusercontent.com/Tarun1203/perp/f92ba597abb06a223ea8f43202664060d866f839/assets/MK50G.jpg",
+        "image": "https://raw.githubusercontent.com/Tarun1203/perp/main/assets/MK50G.jpg",
         "description": "Google TV for unlimited entertainment, movies, and smart controls.",
         "highlights": ["Google Assistant onboard", "High dynamic range (HDR) support", "Personalized recommendations"],
         "warranty": "2 Years Panel Warranty",
@@ -121,7 +121,7 @@ const products = [
         "originalPrice": "₹42,999",
         "tags": ["Full HD", "Voice Keypad"],
         "specs": ["1GB RAM", "8GB ROM"],
-        "image": "https://raw.githubusercontent.com/Tarun1203/perp/f92ba597abb06a223ea8f43202664060d866f839/assets/MK55G.jpg",
+        "image": "https://raw.githubusercontent.com/Tarun1203/perp/main/assets/MK55G.jpg",
         "description": "Large-screen webOS Smart TV for an immersive viewing experience.",
         "highlights": ["Cinema mode visuals", "One-touch casting", "Ultra thin bezel"],
         "warranty": "2 Years Panel Warranty",
@@ -139,7 +139,7 @@ const products = [
         "originalPrice": "₹54,999",
         "tags": ["Full HD", "Voice Keypad"],
         "specs": ["1GB RAM", "8GB ROM"],
-        "image": "https://raw.githubusercontent.com/Tarun1203/perp/f92ba597abb06a223ea8f43202664060d866f839/assets/MK65G.jpg",
+        "image": "https://raw.githubusercontent.com/Tarun1203/perp/main/assets/MK65G.jpg",
         "description": "Ultra large webOS TV for home theater and presentations.",
         "highlights": ["Smart split-screen mode", "Bluetooth audio support", "Intelligent ambient sensor"],
         "warranty": "3 Years Panel Warranty",
@@ -156,7 +156,7 @@ const products = [
         "originalPrice": "₹10,999",
         "specs": ["135W Motor", "2 Programs", "Heavy Pulsator", "Lint Filter", "Diamond Steel Drum", "Buzzer"],
         "tags": ["Toughened Glass", "ABS Body"],
-        "image": "https://raw.githubusercontent.com/Tarun1203/perp/f92ba597abb06a223ea8f43202664060d866f839/assets/MKSSAWM7.jpg",
+        "image": "https://raw.githubusercontent.com/Tarun1203/perp/main/assets/MKSSAWM7.jpg",
         "description": "Durable semi-automatic washer for small families.",
         "highlights": ["Shock-resistant glass lid", "Quick wash modes", "Anti-tangle drum design"],
         "warranty": "2 Years Motor Warranty",
@@ -173,7 +173,7 @@ const products = [
         "originalPrice": "₹12,999",
         "specs": ["185W Motor", "2 Programs", "Heavy Pulsator", "Lint Filter", "Diamond Steel Drum", "Buzzer"],
         "tags": ["Toughened Glass", "ABS Body"],
-        "image": "https://raw.githubusercontent.com/Tarun1203/perp/f92ba597abb06a223ea8f43202664060d866f839/assets/MKSSAWM9.jpg",
+        "image": "https://raw.githubusercontent.com/Tarun1203/perp/main/assets/MKSSAWM9.jpg",
         "description": "High capacity washer for medium-large households.",
         "highlights": ["Energy-efficient operation", "Water level selector", "Robust build for heavy cycles"],
         "warranty": "2 Years Motor Warranty",
@@ -190,7 +190,7 @@ const products = [
         "originalPrice": "₹15,999",
         "specs": ["200W Motor", "2 Programs", "Heavy Pulsator", "Lint Filter", "Diamond Steel Drum", "Buzzer"],
         "tags": ["Toughened Glass", "ABS Body"],
-        "image": "https://raw.githubusercontent.com/Tarun1203/perp/f92ba597abb06a223ea8f43202664060d866f839/assets/MKSSAWM11.jpg",
+        "image": "https://raw.githubusercontent.com/Tarun1203/perp/main/assets/MKSSAWM11.jpg",
         "description": "Largest capacity for joint families and commercial use.",
         "highlights": ["Quick dry turbo function", "Rust-free body design", "Silent motor technology"],
         "warranty": "2 Years Motor Warranty",
@@ -206,7 +206,7 @@ const products = [
         "price": "₹2,999",
         "originalPrice": "₹3,499",
         "tags": ["500 VA", "5 Year Warranty"],
-        "image": "https://raw.githubusercontent.com/Tarun1203/perp/f92ba597abb06a223ea8f43202664060d866f839/assets/MKSTBZREF.jpg",
+        "image": "https://raw.githubusercontent.com/Tarun1203/perp/main/assets/MKSTBZREF.jpg",
         "description": "Specially designed for refrigerator safety in Indian homes.",
         "highlights": ["Auto-correction for voltage fluctuations", "Long durability", "Compact wall-mountable body"],
         "certifications": ["ISI Mark", "MakWell Registered Product"],
@@ -221,7 +221,7 @@ const products = [
         "price": "₹3,499",
         "originalPrice": "₹3,999",
         "tags": ["LED TV", "5 Year Warranty"],
-        "image": "https://raw.githubusercontent.com/Tarun1203/perp/f92ba597abb06a223ea8f43202664060d866f839/assets/MKSTBZSMT.jpg",
+        "image": "https://raw.githubusercontent.com/Tarun1203/perp/main/assets/MKSTBZSMT.jpg",
         "description": "Smart stabilizer for large screen HD LED TVs.",
         "highlights": ["Microprocessor-based control", "LED indication system", "Noiseless operation"],
         "certifications": ["ISI Mark", "MakWell Registered Product"],
@@ -236,7 +236,7 @@ const products = [
         "price": "₹1,999",
         "originalPrice": "₹2,499",
         "tags": ["LED TV", "5 Year Warranty"],
-        "image": "https://raw.githubusercontent.com/Tarun1203/perp/f92ba597abb06a223ea8f43202664060d866f839/assets/MKSTBZMINI.jpg",
+        "image": "https://raw.githubusercontent.com/Tarun1203/perp/main/assets/MKSTBZMINI.jpg",
         "description": "Compact safety stabilizer for small size LED TVs.",
         "highlights": ["Surge & spike protection", "Digital display", "Portable and lightweight"],
         "certifications": ["ISI Mark", "MakWell Registered Product"],
@@ -264,7 +264,7 @@ function initializeApp() {
     
     console.log('🚀 MakWell Electronics Website - Ready!');
     console.log(`📦 ${products.length} products loaded`);
-    console.log('🔗 All images loading from GitHub');
+    console.log('🔗 All images loading from GitHub main branch');
 }
 
 // Mobile menu functionality
@@ -670,7 +670,7 @@ if (window.location.pathname.includes('products.html')) {
 console.log('%c🚀 MakWell Electronics Website', 'color: #1e40af; font-size: 20px; font-weight: bold;');
 console.log('%c🔵 Professional Blue Theme Applied', 'color: #3b82f6; font-size: 14px;');
 console.log('%c📱 Mobile Responsive Design Active', 'color: #0ea5e9; font-size: 12px;');
-console.log('%c🔗 All product images loading from GitHub', 'color: #10b981; font-size: 12px;');
+console.log('%c🔗 All images loading from GitHub main branch', 'color: #10b981; font-size: 12px;');
 console.log('%c🏷️ 48+ Attractive product labels implemented', 'color: #f59e0b; font-size: 12px;');
 
 // Export functions for potential external use
