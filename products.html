@@ -1,81 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Products - MakWell Electronics</title>
-  <meta name="description" content="Browse MakWell's LED TVs, Washing Machines, and Stabilizers.">
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Products | MakWell — Make it Happen</title>
+  <meta name="description" content="Browse MakWell Televisions, Washing Machines and Stabilizers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="https://raw.githubusercontent.com/Tarun1203/makwell-electronics/main/images/Makwell-logo.png">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="theme.js"></script>
+  <style>
+    .filters{
+      position:sticky;top:var(--header-h);z-index:6;
+      background:color-mix(in oklab,var(--bg) 92%, transparent);
+      backdrop-filter:saturate(140%) blur(8px);
+      border-bottom:1px solid var(--border);padding:10px 16px;
+    }
+    .filters .row{display:grid;gap:10px;grid-template-columns:1fr auto auto;align-items:center}
+    @media (max-width:800px){.filters .row{grid-template-columns:1fr 1fr}}
+    @media (max-width:520px){.filters .row{grid-template-columns:1fr}}
+
+    .grid{--min:240px;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(var(--min),1fr))}
+    .card.product{display:grid;gap:10px;padding:12px;border:1px solid var(--border);border-radius:16px;background:var(--panel);box-shadow:var(--shadow)}
+    .media{position:relative;border-radius:12px;overflow:hidden;background:color-mix(in oklab,var(--bg) 90%, var(--accent) 8%);
+      border:1px solid var(--border);aspect-ratio:16/10;display:grid;place-items:center}
+    .media img{width:100%;height:100%;object-fit:contain}
+    .badges{position:absolute;left:8px;top:8px;display:flex;gap:6px;flex-wrap:wrap}
+    .badge{padding:6px 8px;border:1px solid var(--border);border-radius:999px;font-size:12px;font-weight:800;background:color-mix(in oklab,var(--accent) 12%, var(--bg))}
+    .tags{display:flex;gap:6px;flex-wrap:wrap;margin:2px 0 6px}
+    .tag{font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--border);background:var(--bg)}
+    .price-row{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .mini-cta{position:fixed;right:16px;bottom:16px;z-index:9;display:flex;gap:8px;align-items:center;background:var(--panel);
+      border:1px solid var(--border);border-radius:999px;padding:8px 12px;box-shadow:var(--shadow)}
+    @media (max-width:520px){.mini-cta{left:16px;right:16px;justify-content:center}}
+  </style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="nav-logo"><h2>MakWell</h2></div>
-      <ul class="nav-menu">
-        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="products.html" class="nav-link active">Products</a></li>
-        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-      </ul>
-      <div class="nav-toggle" id="mobile-menu">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-      </div>
+<header class="site">
+  <nav>
+    <a class="brand" href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:10px">
+      <img src="https://raw.githubusercontent.com/Tarun1203/makwell-electronics/main/images/Makwell-logo.png" alt="MakWell" width="28" height="28" style="border-radius:6px;object-fit:contain" />
+      <b>MakWell</b> <small class="muted">— Make it Happen</small>
+    </a>
+    <button class="menu-btn" id="menuBtn">☰ Menu</button>
+    <div class="navlinks" id="navLinks">
+      <a href="index.html">Home</a>
+      <a class="active" href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <button id="themeToggle" class="theme-toggle" type="button" onclick="toggleTheme()"></button>
     </div>
   </nav>
-  <section class="page-header">
-    <div class="container">
-      <h1>Our Products</h1>
-      <p>Discover our range of smart home appliances - Latest 2025 models with reliable warranty</p>
-    </div>
-  </section>
-  <section class="filters">
-    <div class="container">
-      <div class="filter-tabs">
-        <button class="filter-tab active" data-category="all">All Products</button>
-        <button class="filter-tab" data-category="Televisions">LED TVs</button>
-        <button class="filter-tab" data-category="Washing Machines">Washing Machines</button>
-        <button class="filter-tab" data-category="Stabilizers">Stabilizers</button>
-      </div>
-    </div>
-  </section>
-  <section class="products-section">
-    <div class="container">
-      <div class="products-grid" id="products-grid"></div>
-    </div>
-  </section>
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section"><h3>MakWell</h3>
-          <p>Trusted Indian brand for smart home appliances with reliable service and competitive prices.</p>
-        </div>
-        <div class="footer-section"><h4>Products</h4>
-          <ul>
-            <li><a href="products.html">LED TVs</a></li>
-            <li><a href="products.html">Washing Machines</a></li>
-            <li><a href="products.html">Stabilizers</a></li>
-          </ul>
-        </div>
-        <div class="footer-section"><h4>Company</h4>
-          <ul>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="contact.html">Support</a></li>
-          </ul>
-        </div>
-        <div class="footer-section"><h4>Contact</h4>
-          <ul>
-            <li>📞 +91 98765 43210</li>
-            <li>✉️ support@makwell.co</li>
-            <li>📍 Bengaluru, Karnataka</li>
-            <li>🕒 Mon–Sat, 9:30 AM – 6:30 PM</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom"><p>&copy; 2025 MakWell Electronics. All rights reserved.</p></div>
-    </div>
-  </footer>
-  <script src="script.js"></script>
+</header>
+
+<section class="hero small">
+  <div class="container">
+    <h1 style="margin:0">Our Products</h1>
+    <p class="muted" style="margin:6px 0 0">Televisions • Washing Machines • Stabilizers</p>
+  </div>
+</section>
+
+<section class="filters">
+  <div class="container row">
+    <input id="q" class="input" placeholder="Search products (press / to focus)" />
+    <select id="category" class="input" style="max-width:240px"></select>
+    <select id="sort" class="input" style="max-width:220px">
+      <option value="popular">Sort: Popular</option>
+      <option value="name">Name A→Z</option>
+    </select>
+  </div>
+</section>
+
+<main class="container" style="margin-top:14px">
+  <div id="skuCount" class="muted" style="margin:6px 0 10px">0 items</div>
+  <div id="results" class="grid"></div>
+  <div id="pager" class="pagination"></div>
+</main>
+
+<div class="mini-cta">
+  <span class="muted" style="font-size:12px">Questions?</span>
+  <a class="btn" target="_blank" rel="noopener" href="https://wa.me/919980000515?text=Hi%20MakWell%2C%20I%20have%20a%20product%20query.">WhatsApp</a>
+  <a class="btn secondary" href="contact.html">Contact</a>
+</div>
+
+<footer class="site" style="text-align:center;padding:30px 10px">
+  © <span id="year"></span> MakWell — Make it Happen.
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+<script defer src="script.js"></script>
+<script>
+  (function(){const b=document.getElementById('menuBtn'), l=document.getElementById('navLinks');
+    b&&b.addEventListener('click',()=>l.classList.toggle('is-open'));
+    l&&l.addEventListener('click',e=>{ if(e.target.tagName==='A') l.classList.remove('is-open'); });
+  })();
+</script>
 </body>
 </html>
