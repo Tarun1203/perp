@@ -1,191 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MakWell Electronics - Smart Home Appliances</title>
-  <meta name="description" content="MakWell Electronics - Leading Indian brand for LED TVs, Washing Machines & Stabilizers.">
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MakWell • Make it Happen</title>
+  <meta name="description" content="MakWell — Smart, efficient home electronics. Make it Happen." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="https://raw.githubusercontent.com/Tarun1203/makwell-electronics/main/images/Makwell-logo.png">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="theme.js"></script>
+  <style>
+    .x-hero{
+      position:relative;text-align:center;overflow:hidden;
+      border-bottom:1px solid var(--border);
+      background:
+        radial-gradient(900px 420px at 15% -10%, color-mix(in oklab, var(--accent) 14%, transparent), transparent 60%),
+        radial-gradient(900px 420px at 110% 0%, color-mix(in oklab, var(--accent-2) 12%, transparent), transparent 60%),
+        var(--bg);
+    }
+    .slider{position:relative;width:100%;overflow:hidden;background:var(--panel);border-bottom:1px solid var(--border)}
+    .slides{display:flex;transition:transform .6s ease;will-change:transform}
+    .slide{min-width:100%;display:grid;place-items:center;background:var(--panel)}
+    .slide img{width:100%;height:auto;object-fit:contain;max-height:min(72vh,720px)}
+    .ctrl{position:absolute;inset:auto 0 12px 0;display:flex;justify-content:center;gap:8px}
+    .dot{width:10px;height:10px;border-radius:999px;border:1px solid var(--border);background:color-mix(in oklab,var(--accent) 30%, var(--bg));cursor:pointer}
+    .dot.active{background:var(--accent)}
+    .arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:6;background:var(--panel);border:1px solid var(--border);
+      width:38px;height:38px;border-radius:10px;display:grid;place-items:center;cursor:pointer}
+    .arrow:hover{box-shadow:var(--ring)} .arrow.prev{left:10px} .arrow.next{right:10px}
+
+    .logo-wrap{display:grid;place-items:center;width:min(72vw,520px);height:min(72vw,520px);
+      border:1px solid var(--border);border-radius:28px;box-shadow:var(--shadow);
+      background:color-mix(in oklab,var(--bg) 92%, var(--accent) 6%);margin:18px auto 10px}
+    .logo-wrap img{width:86%;height:86%;object-fit:contain;filter:drop-shadow(0 10px 24px rgba(0,0,0,.08))}
+
+    .badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:12px 0 0}
+    .badge{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:999px;
+      border:1px solid var(--border);background:color-mix(in oklab,var(--accent) 10%, var(--bg));font-weight:800;font-size:13px}
+    .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:16px 0 24px}
+  </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="nav-logo"><h2>MakWell</h2></div>
-      <ul class="nav-menu">
-        <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
-        <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
-        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-      </ul>
-      <div class="nav-toggle" id="mobile-menu">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-      </div>
+<header class="site">
+  <nav>
+    <a class="brand" href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:10px">
+      <img class="logo" src="https://raw.githubusercontent.com/Tarun1203/makwell-electronics/main/images/Makwell-logo.png" alt="MakWell" width="32" height="32" style="border-radius:6px;object-fit:contain" />
+      <b>MakWell</b> <small class="muted">— Make it Happen</small>
+    </a>
+    <button class="menu-btn" id="menuBtn">☰ Menu</button>
+    <div class="navlinks" id="navLinks">
+      <a class="active" href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <button id="themeToggle" class="theme-toggle" type="button" onclick="toggleTheme()"></button>
     </div>
   </nav>
+</header>
 
-  <section class="hero">
-    <div class="hero-container">
-      <div class="hero-content">
-        <h1 class="hero-title">Welcome to MakWell</h1>
-        <p class="hero-subtitle">LED TVs • Washing Machines • Stabilizers — built for Indian homes with trusted service</p>
-        <div class="hero-buttons">
-          <a href="products.html" class="btn btn-primary">Browse Products</a>
-          <a href="contact.html" class="btn btn-secondary">Register / Service</a>
-        </div>
-      </div>
+<section class="x-hero">
+  <div class="slider" id="slider" aria-roledescription="carousel">
+    <button class="arrow prev" aria-label="Previous">‹</button>
+    <button class="arrow next" aria-label="Next">›</button>
+    <div class="slides" id="slides">
+      <div class="slide"><img src="https://raw.githubusercontent.com/Tarun1203/makwell-electronics/main/images/Banner.jpg" alt="MakWell Electronics Banner"></div>
+      <div class="slide"><img src="https://raw.githubusercontent.com/Tarun1203/makwell-electronics/main/images/WMBanner.jpg" alt="Washing Machine Banner"></div>
+      <div class="slide"><img src="https://raw.githubusercontent.com/Tarun1203/makwell-electronics/main/images/TVBanner.png" alt="Television Banner"></div>
+      <div class="slide"><img src="https://raw.githubusercontent.com/Tarun1203/makwell-electronics/main/images/Features.png" alt="Smart TV Features"></div>
     </div>
-  </section>
+    <div class="ctrl" id="dots" aria-label="Carousel pagination"></div>
+  </div>
 
-  <!-- Certificate Section -->
-  <section class="certificate-section">
-    <div class="container">
-      <div class="certificate-content text-center">
-        <h2>Officially Registered Indian Brand</h2>
-        <div class="certificate-display">
-          <div class="certificate-icon">🏛️</div>
-          <h3>Brand Registration Certificate</h3>
-          <p>MakWell is officially registered under Indian Trade Authority with all required certifications and quality standards.</p>
-          <div class="certificate-buttons">
-            <a href="https://raw.githubusercontent.com/Tarun1203/perp/main/assets/Registration_Certificate_251015_093844.pdf" target="_blank" class="btn btn-primary">
-              📄 View Certificate
-            </a>
-            <a href="https://raw.githubusercontent.com/Tarun1203/perp/main/assets/Registration_Certificate_251015_093844.pdf" download class="btn btn-secondary">
-              ⬇️ Download PDF
-            </a>
-          </div>
-          <div class="trust-indicators">
-            <div class="trust-item"><div class="trust-icon">✓</div><span>Government Registered</span></div>
-            <div class="trust-item"><div class="trust-icon">✓</div><span>Quality Certified</span></div>
-            <div class="trust-item"><div class="trust-icon">✓</div><span>Indian Standards</span></div>
-          </div>
-        </div>
-      </div>
+  <div class="container">
+    <div class="logo-wrap">
+      <img src="https://raw.githubusercontent.com/Tarun1203/makwell-electronics/main/images/Makwell-logo.png" alt="MakWell Logo">
     </div>
-  </section>
+    <h1 style="margin:10px 0 6px">Make it Happen</h1>
+    <p class="muted" style="max-width:780px;margin:0 auto">Smart, efficient home electronics — Televisions • Washing Machines • Stabilizers</p>
 
-  <!-- Product Categories -->
-  <section class="highlights">
-    <div class="container">
-      <h2 class="section-title">Our Product Categories</h2>
-      <div class="highlights-grid">
-        <div class="highlight-card">
-          <div class="highlight-icon">📺</div>
-          <h3>LED TVs</h3>
-          <p>Android, webOS, Google TV models</p>
-          <span class="product-count">8 Models Available</span>
-          <a href="products.html" class="highlight-link">Explore TVs</a>
-        </div>
-        <div class="highlight-card">
-          <div class="highlight-icon">🧺</div>
-          <h3>Washing Machines</h3>
-          <p>Semi-auto SAWM Series</p>
-          <span class="product-count">3 Models Available</span>
-          <a href="products.html" class="highlight-link">Explore Machines</a>
-        </div>
-        <div class="highlight-card">
-          <div class="highlight-icon">⚡</div>
-          <h3>Stabilizers</h3>
-          <p>Protect your appliances</p>
-          <span class="product-count">3 Models Available</span>
-          <a href="products.html" class="highlight-link">Explore Stabilizers</a>
-        </div>
-      </div>
+    <div class="badges">
+      <span class="badge">🇮🇳 Indian Brand</span>
+      <span class="badge">⚡ Energy Efficient</span>
+      <span class="badge">🛡️ Warranty Support</span>
+      <span class="badge">🔧 Service Network</span>
     </div>
-  </section>
 
-  <!-- Featured Products -->
-  <section class="featured-products">
-    <div class="container">
-      <h2 class="section-title">Featured Products</h2>
-      <div class="products-grid" id="featured-products"></div>
-      <div class="text-center">
-        <a href="products.html" class="btn btn-primary">View All Products</a>
-      </div>
+    <div class="cta">
+      <a class="btn" href="products.html">Browse Products</a>
+      <a class="btn secondary" href="about.html">About</a>
+      <a class="btn secondary" href="contact.html">Contact</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Why Choose MakWell -->
-  <section class="features">
-    <div class="container">
-      <h2 class="section-title">Why Choose MakWell</h2>
-      <div class="features-grid">
-        <div class="feature-card"><div class="feature-icon">💻</div><h3>Modern Tech</h3><p>Android / webOS / Google TV, energy-efficient designs, and helpful features</p></div>
-        <div class="feature-card"><div class="feature-icon">🔧</div><h3>Reliable Service</h3><p>Easy product registration, quick support, and genuine parts</p></div>
-        <div class="feature-card"><div class="feature-icon">💰</div><h3>Value for Money</h3><p>Great performance without overpaying</p></div>
-        <div class="feature-card"><div class="feature-icon">🇮🇳</div><h3>Made for India</h3><p>Designed for Indian power conditions and usage patterns</p></div>
-      </div>
-    </div>
-  </section>
+<footer class="site" style="text-align:center;padding:30px 10px">
+  © <span id="year"></span> MakWell — Make it Happen.
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 
-  <!-- Testimonials -->
-  <section class="testimonials">
-    <div class="container">
-      <h2 class="section-title">What Our Customers Say</h2>
-      <div class="testimonials-grid">
-        <div class="testimonial-card"><div class="testimonial-rating"><span class="stars">★★★★★</span></div>
-          <p class="testimonial-text">"Excellent TV quality and great customer service. Very satisfied with my purchase."</p>
-          <div class="testimonial-author"><strong>Rajesh Kumar</strong><span>Mumbai</span></div>
-        </div>
-        <div class="testimonial-card"><div class="testimonial-rating"><span class="stars">★★★★☆</span></div>
-          <p class="testimonial-text">"The washing machine works perfectly. Good value for money and reliable performance."</p>
-          <div class="testimonial-author"><strong>Priya Sharma</strong><span>Delhi</span></div>
-        </div>
-        <div class="testimonial-card"><div class="testimonial-rating"><span class="stars">★★★★★</span></div>
-          <p class="testimonial-text">"Fast delivery and professional installation. Highly recommend MakWell products."</p>
-          <div class="testimonial-author"><strong>Amit Patel</strong><span>Bangalore</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
+<script>
+  (function(){
+    const slider = document.getElementById('slider');
+    const track  = document.getElementById('slides');
+    const slides = Array.from(track.children);
+    const dotsEl = document.getElementById('dots');
+    const prev = slider.querySelector('.arrow.prev');
+    const next = slider.querySelector('.arrow.next');
 
-  <!-- Newsletter -->
-  <section class="newsletter">
-    <div class="container">
-      <div class="newsletter-content">
-        <h2>Stay Updated</h2>
-        <p>Get the latest product updates and offers directly in your inbox</p>
-        <form class="newsletter-form" id="newsletter-form"><input type="email" placeholder="Enter your email" required>
-          <button type="submit" class="btn btn-primary">Subscribe</button>
-        </form>
-      </div>
-    </div>
-  </section>
+    let i=0, timer=null, hover=false, startX=null, dx=0;
+    const N=slides.length, D=5000;
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section"><h3>MakWell</h3>
-          <p>Trusted Indian brand for smart home appliances with reliable service and competitive prices.</p>
-        </div>
-        <div class="footer-section"><h4>Products</h4>
-          <ul>
-            <li><a href="products.html">LED TVs</a></li>
-            <li><a href="products.html">Washing Machines</a></li>
-            <li><a href="products.html">Stabilizers</a></li>
-          </ul>
-        </div>
-        <div class="footer-section"><h4>Company</h4>
-          <ul>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="contact.html">Support</a></li>
-          </ul>
-        </div>
-        <div class="footer-section"><h4>Contact</h4>
-          <ul>
-            <li>📞 +91 98765 43210</li>
-            <li>✉️ support@makwell.co</li>
-            <li>📍 Bengaluru, Karnataka</li>
-            <li>🕒 Mon–Sat, 9:30 AM – 6:30 PM</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom"><p>&copy; 2025 MakWell Electronics. All rights reserved.</p></div>
-    </div>
-  </footer>
-  <script src="script.js"></script>
+    function setIndex(n){
+      i=(n+N)%N;
+      track.style.transform=`translateX(${-i*100}%)`;
+      Array.from(dotsEl.children).forEach((d,idx)=>d.classList.toggle('active', idx===i));
+    }
+    function auto(){ clearInterval(timer); timer=setInterval(()=>{if(!hover) setIndex(i+1)}, D); }
+
+    dotsEl.innerHTML = slides.map((_,k)=>`<button class="dot${k===0?' active':''}" aria-label="Go to slide ${k+1}"></button>`).join('');
+    Array.from(dotsEl.children).forEach((d,idx)=> d.addEventListener('click', ()=>{ setIndex(idx); auto(); }));
+
+    prev.addEventListener('click', ()=>{ setIndex(i-1); auto(); });
+    next.addEventListener('click', ()=>{ setIndex(i+1); auto(); });
+
+    slider.addEventListener('mouseenter', ()=>hover=true);
+    slider.addEventListener('mouseleave', ()=>hover=false);
+
+    slider.addEventListener('touchstart', e=>{ startX=e.touches[0].clientX; dx=0; clearInterval(timer); }, {passive:true});
+    slider.addEventListener('touchmove', e=>{ if(startX==null) return; dx=e.touches[0].clientX-startX; }, {passive:true});
+    slider.addEventListener('touchend', ()=>{ if(Math.abs(dx)>40) setIndex(i + (dx<0?1:-1)); startX=null; dx=0; auto(); });
+
+    setIndex(0); auto();
+  })();
+
+  (function(){const b=document.getElementById('menuBtn'), l=document.getElementById('navLinks');
+    b&&b.addEventListener('click',()=>l.classList.toggle('is-open'));
+    l&&l.addEventListener('click',e=>{ if(e.target.tagName==='A') l.classList.remove('is-open'); });
+  })();
+</script>
 </body>
 </html>
