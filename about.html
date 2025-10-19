@@ -1,124 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About MakWell</title>
-  <meta name="description" content="Learn about MakWell Electronics - A trusted Indian brand committed to delivering quality home appliances with modern features and reliable after-sales support.">
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About | MakWell — Make it Happen</title>
+  <meta name="description" content="MakWell is an Indian brand building reliable Televisions, Washing Machines and Stabilizers — efficient, serviceable, and easy to own." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="https://raw.githubusercontent.com/Tarun1203/makwell-electronics/main/images/Makwell-logo.png">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="theme.js"></script>
+  <style>
+    .hero{position:relative;overflow:hidden;text-align:center;padding:clamp(48px,8vw,96px) 16px 32px;
+      background:radial-gradient(1200px 520px at -10% -20%, color-mix(in oklab, var(--accent) 18%, transparent), transparent 60%),
+                 radial-gradient(1200px 520px at 110% -10%, color-mix(in oklab, var(--accent-2) 18%, transparent), transparent 60%),var(--bg);
+      border-bottom:1px solid var(--border)}
+    .hero .logo{width:clamp(84px,12vw,112px);height:clamp(84px,12vw,112px);border-radius:18px;border:1px solid var(--border);
+      background:color-mix(in oklab,var(--bg) 88%, var(--accent) 10%);display:grid;place-items:center;margin:0 auto 12px;box-shadow:var(--shadow)}
+    .hero .logo img{width:80%;height:80%;object-fit:contain}
+    .badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+    .badge{padding:8px 12px;border-radius:999px;border:1px solid var(--border);background:color-mix(in oklab,var(--accent) 10%, var(--bg));font-weight:800;font-size:13px}
+    .grid-3{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
+    @media (max-width:900px){.grid-3{grid-template-columns:1fr}}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
+    .icon{width:44px;height:44px;border-radius:12px;border:1px solid var(--border);background:color-mix(in oklab,var(--accent) 12%, var(--bg));
+      display:grid;place-items:center;font-size:20px;margin-bottom:6px}
+    .stats{display:grid;gap:14px;grid-template-columns:repeat(3,1fr);margin-top:10px}
+    @media (max-width:900px){.stats{grid-template-columns:1fr}}
+    .stat{text-align:center;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:18px 12px}
+    .stat h2{margin:0;font-size:clamp(26px,6vw,40px)}
+    .timeline{position:relative;padding-left:18px}
+    .timeline:before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:color-mix(in oklab,var(--accent) 30%, var(--border));border-radius:2px}
+    .step{position:relative;margin-top:14px}
+    .step:before{content:"";position:absolute;left:-12px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in oklab,var(--accent) 22%, transparent)}
+  </style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="nav-logo"><h2>MakWell</h2></div>
-      <ul class="nav-menu">
-        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
-        <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
-        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-      </ul>
-      <div class="nav-toggle" id="mobile-menu">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-      </div>
+<header class="site">
+  <nav>
+    <a class="brand" href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:10px">
+      <img src="https://raw.githubusercontent.com/Tarun1203/makwell-electronics/main/images/Makwell-logo.png" alt="MakWell" width="32" height="32" style="border-radius:6px;object-fit:contain" />
+      <b>MakWell</b> <small class="muted">— Make it Happen</small>
+    </a>
+    <div class="navlinks" style="margin-left:auto;display:flex;gap:8px;align-items:center">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a class="active" href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <button id="themeToggle" class="theme-toggle" type="button" onclick="toggleTheme()"></button>
     </div>
   </nav>
-  <section class="page-header">
-    <div class="container">
-      <h1>About MakWell</h1>
-      <p>We build reliable home appliances with modern features and strong after-sales support.</p>
+</header>
+
+<section class="hero">
+  <div class="logo"><img src="https://raw.githubusercontent.com/Tarun1203/makwell-electronics/main/images/Makwell-logo.png" alt="MakWell" /></div>
+  <h1 style="margin:8px 0 6px">Built for India. <span style="color:var(--accent)">Make it Happen.</span></h1>
+  <p class="muted" style="max-width:820px;margin:0 auto">
+    We craft Televisions, Washing Machines, and Stabilizers that are <b>efficient</b>, <b>serviceable</b>, and <b>reliable</b>.
+    Thoughtful features, honest specs, and responsive support — that’s the MakWell way.
+  </p>
+  <div class="badges">
+    <span class="badge">🇮🇳 Indian Brand</span><span class="badge">⚡ Energy Efficient</span>
+    <span class="badge">🛡️ Warranty Support</span><span class="badge">🔧 Service Network</span>
+  </div>
+</section>
+
+<section class="container" style="margin-top:22px">
+  <div class="grid-3">
+    <article class="card"><div class="icon">🏭</div><h3 style="margin:0 0 6px">Production Discipline</h3><p class="muted">Quality gates at board tests, firmware validation, and burn-in — so your product works flawlessly out of the box.</p></article>
+    <article class="card"><div class="icon">📦</div><h3 style="margin:0 0 6px">Reliable Logistics</h3><p class="muted">FIFO storage, batch tracking, and tamper-evident packaging ensure safe, predictable deliveries across India.</p></article>
+    <article class="card"><div class="icon">🔧</div><h3 style="margin:0 0 6px">Service That Cares</h3><p class="muted">Simple warranty flows, genuine spares, and trained technicians — for fixes you can trust.</p></article>
+  </div>
+</section>
+
+<section class="container" style="margin-top:18px">
+  <div class="stats">
+    <article class="stat card"><h2 data-count="65" data-suffix="″">0</h2><div class="muted">TV Sizes up to</div></article>
+    <article class="stat card"><h2 data-count="11" data-suffix=" kg">0</h2><div class="muted">Washing Capacity</div></article>
+    <article class="stat card"><h2 data-count="5" data-suffix=" yrs">0</h2><div class="muted">Stabilizer Warranty*</div></article>
+  </div>
+  <p class="muted" style="text-align:center;margin-top:8px;font-size:12px">*On select models only.</p>
+</section>
+
+<section class="container" style="margin-top:18px">
+  <article class="card">
+    <h3 style="margin:0 0 4px">Our Journey</h3>
+    <div class="timeline">
+      <div class="step"><h4 style="margin:0 0 4px">Foundation</h4><p class="muted" style="margin:0">Reliable, easy-to-own televisions for Indian homes — that’s where we began.</p></div>
+      <div class="step"><h4 style="margin:0 0 4px">Expansion</h4><p class="muted" style="margin:0">Semi-automatic washing machines and smart stabilizers with clear, honest feature sets.</p></div>
+      <div class="step"><h4 style="margin:0 0 4px">Today</h4><p class="muted" style="margin:0">We keep refining efficiency, durability, and service coverage — so you can <b>Make it Happen</b>.</p></div>
     </div>
-  </section>
-  <section class="about-content">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-text">
-          <h2>Our Story</h2>
-          <p>MakWell is focused on delivering quality LED TVs, Washing Machines, and Stabilizers designed for Indian homes. From thoughtful features to dependable performance, our products are made to last and easy to use.</p>
-          <p>Founded with a vision to bring modern technology to every Indian household, we understand the unique needs of Indian families. Our products are specifically designed to handle Indian power conditions, weather patterns, and usage requirements.</p>
-          <p>We believe in honest pricing, transparent service, and building long-term relationships with our customers through reliable products and exceptional after-sales support.</p>
-        </div>
-        <div class="about-image">
-          <div class="image-placeholder">
-            <div class="placeholder-icon">🏢</div>
-            <span>Company Image</span>
-          </div>
-        </div>
-      </div>
+  </article>
+</section>
+
+<section class="container" style="margin:22px 0 34px">
+  <article class="card" style="text-align:center">
+    <h3 style="margin:0 0 6px">Ready to explore?</h3>
+    <p class="muted" style="margin:0 0 12px">Find the right TV, Washing Machine, or Stabilizer for your home.</p>
+    <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+      <a class="btn" href="products.html">Browse Products</a>
+      <a class="btn secondary" href="contact.html">Talk to Support</a>
     </div>
-  </section>
-  <section class="mission-vision">
-    <div class="container">
-      <div class="mv-grid">
-        <div class="mv-card">
-          <div class="mv-icon">🎯</div>
-          <h3>Our Mission</h3>
-          <p>Bring smart, durable appliances to every household with honest pricing and great service.</p>
-        </div>
-        <div class="mv-card">
-          <div class="mv-icon">👁️</div>
-          <h3>Our Vision</h3>
-          <p>Be a trusted Indian brand known for innovation, reliability, and care.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="why-choose">
-    <div class="container">
-      <h2 class="section-title">Why Choose MakWell</h2>
-      <div class="features-grid">
-        <div class="feature-card"><div class="feature-icon">💻</div><h3>Modern Tech</h3><p>Android / webOS / Google TV, energy-efficient designs, and helpful features.</p></div>
-        <div class="feature-card"><div class="feature-icon">🔧</div><h3>Reliable Service</h3><p>Easy product registration, quick support response, and genuine parts availability across India.</p></div>
-        <div class="feature-card"><div class="feature-icon">💰</div><h3>Value for Money</h3><p>Great performance and quality without overpaying. Fair pricing for premium features.</p></div>
-        <div class="feature-card"><div class="feature-icon">🇮🇳</div><h3>Made for India</h3><p>Designed specifically for Indian power conditions, climate, and usage patterns.</p></div>
-      </div>
-    </div>
-  </section>
-  <section class="company-values">
-    <div class="container">
-      <h2 class="section-title">Our Values</h2>
-      <div class="values-grid">
-        <div class="value-item"><div class="value-icon">⭐</div><h4>Quality First</h4><p>Every product goes through rigorous testing to ensure it meets our high standards before reaching your home.</p></div>
-        <div class="value-item"><div class="value-icon">👥</div><h4>Customer Focus</h4><p>Your satisfaction is our priority. We listen to feedback and continuously improve our products and services.</p></div>
-        <div class="value-item"><div class="value-icon">🚀</div><h4>Innovation</h4><p>We embrace new technologies and features that genuinely improve your daily life and home experience.</p></div>
-        <div class="value-item"><div class="value-icon">🤝</div><h4>Trust & Transparency</h4><p>Honest communication, clear pricing, and reliable warranty terms. No hidden surprises.</p></div>
-        <div class="value-item"><div class="value-icon">🌍</div><h4>Local Understanding</h4><p>As an Indian brand, we understand local needs, preferences, and challenges better than global brands.</p></div>
-        <div class="value-item"><div class="value-icon">🔧</div><h4>After-Sales Care</h4><p>Our relationship doesn't end at purchase. We provide ongoing support and service for years to come.</p></div>
-      </div>
-    </div>
-  </section>
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section"><h3>MakWell</h3>
-          <p>Trusted Indian brand for smart home appliances with reliable service and competitive prices.</p>
-        </div>
-        <div class="footer-section"><h4>Products</h4>
-          <ul>
-            <li><a href="products.html">LED TVs</a></li>
-            <li><a href="products.html">Washing Machines</a></li>
-            <li><a href="products.html">Stabilizers</a></li>
-          </ul>
-        </div>
-        <div class="footer-section"><h4>Company</h4>
-          <ul>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="contact.html">Support</a></li>
-          </ul>
-        </div>
-        <div class="footer-section"><h4>Contact</h4>
-          <ul>
-            <li>📞 +91 98765 43210</li>
-            <li>✉️ support@makwell.co</li>
-            <li>📍 Bengaluru, Karnataka</li>
-            <li>🕒 Mon–Sat, 9:30 AM – 6:30 PM</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom"><p>&copy; 2025 MakWell Electronics. All rights reserved.</p></div>
-    </div>
-  </footer>
-  <script src="script.js"></script>
+  </article>
+</section>
+
+<footer class="site" style="text-align:center;padding:40px 10px">
+  © <span id="year"></span> MakWell — Make it Happen.
+</footer>
+
+<script>
+  document.getElementById('year').textContent=new Date().getFullYear();
+  const ease=t=>1-Math.pow(1-t,4);
+  function animateCount(el){const target=+el.dataset.count||0,suffix=el.dataset.suffix||'';let t0;
+    function step(t){if(!t0)t0=t;const p=Math.min(1,(t-t0)/1200);el.textContent=Math.round(target*(1-Math.pow(1-p,4)))+suffix;if(p<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);
+  }
+  document.querySelectorAll('[data-count]').forEach(animateCount);
+</script>
 </body>
 </html>
